@@ -1,0 +1,24 @@
+int binSearch(void* Arr, int Size, int ElemSize, void* Item, int(*compare)(void*, void*))
+{
+	//Declaration ov varaibles
+	BOOL found; 
+	int left, right, place;
+	//Intitalization of variables
+	found = FALSE;
+	left = 0;
+	right = Size - 1;
+
+	while (!found && (left <= right))
+	{
+		place = (left + right) / 2;
+
+		if (compare((char*)Arr + (place*ElemSize), (char*)Item) == 0)
+			found = TRUE;
+		else if (compare((char*)Arr + (place*ElemSize), (char*)Item) < 0)
+			left = place + 1;
+		else
+			right = place - 1;
+	}
+
+	return found; //We return the result of found
+}
