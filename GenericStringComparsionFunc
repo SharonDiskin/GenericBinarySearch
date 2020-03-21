@@ -1,0 +1,7 @@
+int compareString(void* a, void* b)
+{
+	char** cpyA = (char**)a;
+	char** cpyB = (char**)b;
+
+	return strcmp(*cpyA, *cpyB);
+}
