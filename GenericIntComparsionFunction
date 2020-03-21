@@ -1,0 +1,7 @@
+int compareInt(void* a, void* b)
+{
+	int* cpyA = (int*)a;
+	int* cpyB = (int*)b;
+
+	return *cpyA - *cpyB;
+}
